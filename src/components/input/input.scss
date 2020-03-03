@@ -1,0 +1,89 @@
+@import '../../app/_variables';
+
+.form-field {
+  position: relative;
+  display: flex;
+
+  &__error {
+    .form-input {
+      border-bottom : 1px solid $tabasco-color;
+    }
+
+    .floating-label {
+      color: $tabasco-color;
+      opacity: 1 !important;
+      font-size: .12rem !important;
+    }
+  }
+}
+
+.form-input {
+  padding: .30rem .05rem .17rem;
+  width: 100%;
+  border: none;
+  border-bottom : 1px solid $mercury-color;
+  box-sizing: border-box;
+  font-family: Raleway, sans-serif;
+  font-size: .12rem;
+  line-height: .16rem;
+  color: $tundora-color;
+  background: transparent;
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0 0 0 50px #fff;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus ~ .floating-label {
+    top: .05rem;
+    font-size: .1rem;
+    opacity: .4;
+  }
+
+  &:focus ~ .floating-phone{
+    display: block;
+  }
+
+  &:not(:focus):valid ~ .floating-label {
+    top: .05rem;
+    font-size: .1rem;
+    opacity: .4;
+  }
+
+  &:not(:focus):valid ~ .floating-phone {
+    display: block;
+  }
+
+  @media screen and(max-width: $mobile) {
+    font-size: 16px !important;
+    border-radius: 0;
+    outline: none;
+  }
+
+}
+
+.form-input[name='phone'] {
+  padding-left: .3rem;
+}
+
+.floating-phone {
+  display: none;
+  font-size: .12rem;
+  line-height: .16rem;
+  color: #474747;
+  position: absolute;
+  top: 46%;
+}
+
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: .05rem;
+  top: .21rem;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  font-size: .16rem;
+  color: $tundora-color;
+}
+

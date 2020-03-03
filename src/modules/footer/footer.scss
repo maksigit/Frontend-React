@@ -1,0 +1,199 @@
+@import '../../app/_variables';
+
+.main-footer {
+  padding: .6rem .6rem .2rem .6rem;
+  background: $tundora-color;
+  //margin-top: 1.2rem;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and(max-width: $mobile){
+      flex-direction: column;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .6rem;
+
+    .copyright {
+      font-family: 'Raleway', sans-serif;
+      font-size: .12rem;
+      color: $white-color;
+    }
+
+    .by-rossery {
+      display: flex;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+      }
+      span {
+        margin-right: .11rem;
+        font-family: 'Raleway', sans-serif;
+        font-size: .12rem;
+        color: $white-color;
+      }
+      svg {
+        width: .57rem;
+        height: .09rem;
+
+        path {
+          transition: .4s;
+        }
+
+        &:hover {
+          path {
+            fill: #BEA972;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and(max-width: $tablets){
+    padding: .6rem .3rem .2rem .3rem;
+  }
+
+  @media screen and(max-width: $mobile){
+    padding: .4rem .2rem .2rem .2rem;
+  }
+}
+
+.footer-block {
+  width: 2.3rem;
+  display: flex;
+  flex-direction: column;
+
+  .logo {
+    img {
+      width: 100%;
+    }
+  }
+
+  .btn-primary {
+    padding: .17rem;
+
+    @media screen and(max-width: $mobile) {
+      margin-top: .2rem;
+    }
+  }
+
+  .wrap-social {
+     margin-top: .5rem;
+
+    @media screen and(max-width: $mobile){
+      margin-top: .3rem;
+    }
+  }
+
+  &:last-child {
+
+    .title-real-estate {
+      opacity: 1;
+
+      .title-real-estate-city {
+        opacity: .4;
+      }
+
+      @media screen and(max-width: $mobile){
+        width: 2.3rem;
+      }
+    }
+
+    @media screen and(max-width: $mobile){
+      margin-top: .4rem;
+      width: 100%;
+    }
+  }
+
+  &:nth-child(2) {
+
+    @media screen and(max-width: $tablets){
+      display: none;
+    }
+  }
+  &:nth-child(3) {
+
+    @media screen and(max-width: $mobile){
+      margin-top: .4rem;
+    }
+  }
+}
+
+.footer-block .title-real-estate-city {
+  margin-bottom: .2rem;
+}
+
+.footer-block .phone-number {
+  margin-bottom: .1rem;
+}
+
+.footer-block .btn-primary {
+  margin-top: .1rem;
+}
+
+.title-real-estate {
+  font-family: 'Raleway Bold', sans-serif;
+  font-size: .12rem;
+  color: $white-color;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  position: relative;
+}
+
+.footer-block .title-real-estate,
+.title-real-estate-city {
+  opacity: .4;
+}
+
+.real-estate-list {
+  list-style-type: none;
+  margin-top: .3rem;
+
+  &__item {
+    display: flex;
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      font-family: 'Raleway Bold', sans-serif;
+      font-size: .12rem;
+      color: $white-color;
+      text-transform: uppercase;
+      transition: .4s;
+      letter-spacing: .5px;
+
+      &:hover {
+        color: $gimblet-color;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-top: .15rem;
+    }
+  }
+}
+// Footer mobile styles
+@media screen and(max-width: $mobile) {
+
+  .main-footer .logo {
+    width: 1.6rem;
+  }
+
+  .social-icon {
+    width: 0.37rem;
+    height: 0.37rem;
+  }
+
+  .real-estate-list__item a {
+    line-height: .14rem;
+  }
+
+}

@@ -1,0 +1,1 @@
+export const getPhone = state => state.footerReducer.tel.tel;

@@ -1,0 +1,126 @@
+@import '../../app/_variables';
+
+.wrap-choose-language {
+  position: absolute;
+  right: .3rem;
+  top: 37%;
+  transform: translateX(-.3rem);
+  transition: 1s;
+  opacity: 0;
+
+  .choose-language-btn {
+    font-family: 'Raleway Bold', sans-serif;
+    font-size: .12rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    transition: .4s;
+    border-right: .03rem solid $white-color;
+
+    &:hover {
+      color: $gimblet-color;
+    }
+
+    @media screen and(max-width: $tablets) {
+      border-right: 0;
+      padding: .1rem .2rem;
+      display: none;
+    }
+  }
+
+  @media screen and(max-width: $tablets) {
+    top: 1.15rem;
+    display: none;
+  }
+
+  @media screen and(max-width: $mobile) {
+    top: .7rem;
+    right: 0;
+  }
+}
+
+//animate
+
+.done .wrap-choose-language {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 3.4s;
+}
+
+.choose-language {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 0;
+  overflow: hidden;
+  transition: height .4s;
+  border-right: .03rem solid $white-color;
+
+  a {
+    display: flex;
+    text-decoration: none;
+
+    &:last-child {
+      label {
+        .font-small {
+          padding-top: .1rem;
+        }
+      }
+    }
+  }
+
+  &__open {
+    height: .85rem;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    cursor: pointer;
+    display: flex;
+
+    &:first-child {
+      .font-small {
+        padding-top: .2rem;
+
+        @media screen and(max-width: $tablets) {
+          padding: .1rem .2rem;
+        }
+      }
+    }
+  }
+
+  &__label-first {
+    order: -1;
+  }
+
+  .font-small {
+    padding: .1rem .2rem;
+    font-family: 'Raleway Bold', sans-serif;
+    text-transform: uppercase;
+    transition: .4s;
+
+    &:hover {
+      color: $gimblet-color;
+    }
+  }
+
+  @media screen and(max-width: $tablets) {
+    height: auto;
+    border-right: 0;
+    display: none;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+.choose-language.mobile {
+  display: none;
+
+  @media screen and(max-width: $tablets) {
+    display: flex;
+  }
+}

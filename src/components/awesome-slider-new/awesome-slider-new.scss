@@ -1,0 +1,250 @@
+@import '../../app/_variables';
+
+.awssld {
+  --slider-transition-duration: 1500ms;
+  --slider-height-percentage: 60%;
+  --organic-arrow-thickness: 6px;
+  --organic-arrow-border-radius: 0px;
+  --organic-arrow-height: 40px;
+  --control-button-width: 10%;
+  --control-button-height: 25%;
+  --control-button-background: transparent;
+  --loader-bar-height: 6px;
+  //height: 100%;
+  //--loader-bar-color: none;
+  --open-animation-angle: 0deg;
+  //--organic-arrow-color: none;
+  //--control-bullet-color: none;
+  //--control-bullet-active-color: none;
+  --content-background-color: none;
+  //--transition-bezier: none;
+
+  &__container {
+    height: 100%;
+  }
+
+  &__timer {
+    top: .6rem;
+    background: $white-color;
+    height: 1px;
+  }
+
+  &__bullets {
+    counter-reset: heading;
+    right: 0;
+    width: max-content;
+    top: 4rem;
+    bottom: unset;
+    flex-direction: column;
+    align-items: flex-end;
+
+    button {
+      //position: relative;
+      transform: unset;
+      background: unset;
+      width: .1rem;
+      height: 1px;
+      background: $white-color;
+      transition: .4s;
+      //text-indent: unset;
+
+      //&:before {
+      //  counter-increment: heading;
+      //  content: counter(heading);
+      //  position: absolute;
+      //  //top: 0;
+      //  right: 0;
+      //  width: 1rem;
+      //  //height: 20px;
+      //  font-family: 'Raleway', sans-serif;
+      //  font-size: .16rem;
+      //  color: $white-color;
+      //}
+
+      @media screen and(max-width: $mobile) {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 1px solid $white-color;
+      }
+    }
+
+    button.awssld__bullets--active {
+      position: relative;
+      transform: unset;
+      background: unset;
+      width: .5rem;
+      height: 1px;
+      background: $white-color;
+      //text-indent: unset;
+
+      //&:before {
+      //  counter-increment: heading;
+      //  content: counter(heading);
+      //  position: absolute;
+      //  //top: 0;
+      //  right: 0;
+      //  width: 1rem;
+      //  //height: 20px;
+      //  font-family: 'Raleway', sans-serif;
+      //  font-size: .16rem;
+      //  color: $white-color;
+      //}
+
+      @media screen and(max-width: $mobile) {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+      }
+    }
+
+    @media screen and(max-width: $mobile) {
+      //display: none;
+      top: unset;
+      bottom: .2rem;
+      flex-direction: row;
+      right: 50%;
+      transform: translateX(50%);
+
+    }
+  }
+
+  &__controls {
+    visibility: visible !important;
+
+    .awssld__next {
+      top: unset;
+      bottom: .7rem;
+      right: .5rem;
+      height: .68rem;
+      width: .68rem;
+      border: 1px solid #e1e1e1;
+      transform: skewX(-19deg);
+
+      .awssld__controls__arrow-right {
+        background: url("./next.svg") no-repeat center;
+        background-size: .2rem;
+        transition: .4s;
+
+        &:before {
+          background-color: transparent;
+        }
+
+        &:after {
+          background-color: transparent;
+        }
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $white-color;
+        transition: all .5s cubic-bezier(.42, 0, .58, 1);
+
+        @media screen and(max-width: $mobile) {
+          display: none;
+        }
+      }
+
+      &:hover:before {
+        width: 100%;
+        right: auto;
+        left: 0%;
+      }
+
+      &:hover .awssld__controls__arrow-right {
+        background: url("./next-tundora.svg") no-repeat center;
+        background-size: .2rem;
+      }
+
+      @media screen and(max-width: $mobile) {
+        border: none;
+        width: .4rem;
+        height: .4rem;
+        bottom: .1rem;
+        right: .2rem;
+      }
+    }
+
+    .awssld__prev {
+      top: unset;
+      bottom: .7rem;
+      right: 1.3rem;
+      left: unset;
+      height: .68rem;
+      width: .68rem;
+      border: 1px solid #e1e1e1;
+      transform: skewX(-19deg);
+
+      .awssld__controls__arrow-left {
+        background: url("./prev.svg") no-repeat center;
+        background-size: .2rem;
+        transition: .4s;
+
+        &:before {
+          background-color: transparent;
+        }
+
+        &:after {
+          background-color: transparent;
+        }
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $white-color;
+        transition: all .5s cubic-bezier(.42, 0, .58, 1);
+
+        @media screen and(max-width: $mobile) {
+          display: none;
+        }
+      }
+
+      &:hover:before {
+        width: 100%;
+        right: auto;
+        left: 0;
+      }
+
+      &:hover .awssld__controls__arrow-left {
+        background: url("./prev-tundora.svg") no-repeat center;
+        background-size: .2rem;
+      }
+
+      @media screen and(max-width: $mobile) {
+        border: none;
+        width: .4rem;
+        height: .4rem;
+        bottom: .1rem;
+        left: .2rem;
+        right: unset;
+      }
+    }
+  }
+
+  &__controls--active {
+    .awssld__next {
+      .awssld__controls__arrow-right {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .awssld__prev {
+      .awssld__controls__arrow-left {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+}

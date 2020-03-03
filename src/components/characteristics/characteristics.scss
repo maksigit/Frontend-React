@@ -1,0 +1,124 @@
+@import '../../app/_variables';
+
+.characteristics {
+  position: relative;
+  background: $wild-sand-color;
+  padding: 1rem .6rem;
+  margin-top: 1rem;
+
+  &__more {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    border: none;
+    background: transparent;
+    padding: .05rem;
+    cursor: pointer;
+
+    svg {
+      margin-right: .1rem;
+    }
+
+    .font-small {
+      color: $gimblet-color;
+      text-transform: uppercase;
+      font-family: 'Raleway Bold', sans-serif;
+    }
+
+    @media screen and(max-width: $mobile) {
+      position: absolute;
+      bottom: .2rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__bottom{
+    margin-top: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid $nobel-color;
+    border-bottom: 1px solid $nobel-color;
+  }
+
+  &__item{
+    width: 33%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+    border-right: 1px solid $nobel-color;
+
+    .font-small {
+      color: $tundora-color;
+      text-transform: uppercase;
+      font-family: 'Raleway Bold', sans-serif;
+      margin-top: .2rem;
+
+      @media screen and(max-width: $mobile) {
+        text-transform: none;
+      }
+    }
+
+    &:nth-child(1) {
+      border-bottom: 1px solid $nobel-color;
+    }
+    &:nth-child(2) {
+      border-bottom: 1px solid $nobel-color;
+    }
+    &:nth-child(3) {
+      border-bottom: 1px solid $nobel-color;
+      border-right: none;
+    }
+    &:nth-child(6) {
+      border-right: none;
+    }
+
+    @media screen and(max-width: $mobile) {
+      width: 50%;
+      border-right: none;
+      padding-top: .3rem;
+      padding-bottom: .3rem;
+
+      &:nth-child(2n + 1) {
+        border-right: 1px solid $nobel-color;
+      }
+
+      &:nth-child(4) {
+        border-bottom: 1px solid $nobel-color;
+      }
+    }
+  }
+
+  &__rectangle {
+    width: 9px;
+    height: 1px;
+    background: $tundora-color;
+    margin-top: .1rem;
+  }
+
+  &__count {
+    font-family: 'Helvetica', sans-serif;
+    font-size: .3rem;
+    line-height: .44rem;
+    letter-spacing: 1px;
+    color: $gimblet-color;
+
+    @media screen and(max-width: $mobile) {
+      font-size: .16rem;
+    }
+  }
+
+  @media screen and(max-width: $tablets) {
+    padding: 1rem .3rem;
+  }
+
+  @media screen and(max-width: $mobile) {
+    padding: .6rem 0;
+    margin-top: .6rem;
+    //margin-left: .1rem;
+  }
+}

@@ -1,0 +1,102 @@
+@import '../../app/_variables';
+
+.wrap-city-select-get-to-us {
+  position: absolute;
+  right: .2rem;
+  top: .2rem;
+  background: $tundora-color;
+  //display: flex;
+  //flex-direction: column;
+  //align-items: flex-start;
+
+  .city-select-btn {
+    font-family: 'Raleway', sans-serif;
+    font-size: .34rem;
+    line-height: .44rem;
+    color: #fff;
+    //text-align: center;
+    cursor: pointer;
+    transition: .4s;
+
+    &:hover {
+      color: $gimblet-color;
+    }
+
+    svg {
+      margin-left: .1rem;
+      pointer-events: none;
+      width: .12rem;
+      height: .08rem;
+    }
+
+    @media screen and(max-width: $mobile) {
+      font-size: .20rem;
+      line-height: .30rem;
+    }
+  }
+
+  .city-select-btn.rotate {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  @media screen and(max-width: $tablets) {
+    right: 2.9rem;
+  }
+
+  @media screen and(max-width: $mobile) {
+    right: .2rem;
+    top: .1rem;
+  }
+}
+
+.city-select-get-to-us {
+  display: flex;
+  flex-direction: column;
+  //align-items: center;
+  height: 0;
+  overflow: hidden;
+  transition: .4s;
+
+  &__open {
+    height: auto;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    cursor: pointer;
+    display: flex;
+
+    &:first-child {
+      .font-small {
+        padding-top: .1rem;
+      }
+
+    }
+  }
+
+  &__label-first {
+    order: -1;
+  }
+
+  .font-small {
+    padding: .1rem .2rem .1rem 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: .34rem;
+    transition: .4s;
+    opacity: .4;
+
+    &:hover {
+      color: $gimblet-color;
+    }
+
+    @media screen and(max-width: $mobile) {
+      font-size: .20rem;
+      line-height: .30rem;
+    }
+  }
+}

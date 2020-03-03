@@ -1,0 +1,34 @@
+@import '../../app/_variables';
+
+.tabs {
+
+
+  //&__top {
+  //  //display: flex;
+  //  justify-content: space-between;
+  //  padding: 0 .6rem;
+
+    .font-small {
+      color: $tundora-color;
+      text-transform: uppercase;
+      opacity: .4;
+      font-family: 'Raleway Bold', sans-serif;
+      transition: .4s;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  //}
+
+  &__item.active {
+
+    .font-small {
+      opacity: 1;
+    }
+
+  }
+}
+
+

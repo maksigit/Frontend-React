@@ -1,0 +1,86 @@
+@import '../../app/_variables';
+
+.wrap-city-select {
+  position: absolute;
+  right: 0.3rem;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .city-select-btn {
+    font-family: 'Raleway Bold', sans-serif;
+    font-size: .12rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    transition: .4s;
+
+    &:hover {
+      color: $gimblet-color;
+    }
+
+    svg {
+      margin-left: .1rem;
+      pointer-events: none;
+      width: .12rem;
+      height: .08rem;
+    }
+  }
+
+  .city-select-btn.rotate {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  //@media screen and(max-width: $tablets) {
+  //  display: none;
+  //}
+}
+
+.city-select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 0;
+  overflow: hidden;
+  transition: height .7s;
+
+  &__open {
+    height: .3rem;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    cursor: pointer;
+    display: flex;
+
+    &:first-child {
+      .font-small {
+        padding-top: .1rem;
+      }
+
+    }
+  }
+
+  &__label-first {
+    order: -1;
+  }
+
+  .font-small {
+    padding: .1rem .2rem .1rem 0;
+    font-family: 'Raleway Bold', sans-serif;
+    text-transform: uppercase;
+    transition: .4s;
+    opacity: .4;
+
+    &:hover {
+      color: $gimblet-color;
+    }
+  }
+}

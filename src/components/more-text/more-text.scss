@@ -1,0 +1,13 @@
+@import '../../app/_variables';
+
+.more-text {
+  display: flex;
+  align-items: center;
+
+  &__text {
+    color: $gimblet-color;
+    text-transform: uppercase;
+    font-family: 'Raleway Bold', sans-serif;
+    margin-right: 8px;
+  }
+}

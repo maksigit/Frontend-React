@@ -1,0 +1,57 @@
+@import '../../app/_variables';
+
+.banner {
+  position: relative;
+
+  &__img {
+    display: flex;
+    height: 3.7rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(180deg,rgba(0,0,0,.11),transparent),linear-gradient(0deg,rgba(0,0,0,.11),transparent 50%) rgba(13,15,81,.18);
+    }
+  }
+
+  &__desc {
+    color: $white-color;
+
+    @media screen and(max-width: $mobile) {
+      font-size: .14rem;
+    }
+  }
+
+  &__desc-button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    width: 7.8rem;
+    bottom: .5rem;
+    left: .5rem;
+
+    @media screen and(max-width: $tablets) {
+      width: 100%;
+      left: 0;
+      padding: 0 .3rem;
+    }
+
+    @media screen and(max-width: $mobile) {
+      padding: 0 .2rem;
+      font-size: .14rem;
+    }
+  }
+}
+

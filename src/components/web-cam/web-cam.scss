@@ -1,0 +1,30 @@
+@import '../../app/_variables';
+
+.web-cam {
+  display: flex;
+  margin-left: auto;
+  margin-right: .6rem;
+  width: 1.2rem;
+  transition: .4s;
+  text-align: center;
+
+  &__btn {
+    border: none;
+    background: transparent;
+    transition: .6s;
+    font-family: 'Raleway Bold', sans-serif;
+    font-size: .12rem;
+    text-transform: uppercase;
+    color: $gimblet-color;
+    letter-spacing: .02rem;
+    cursor: pointer;
+    padding: .2rem 0;
+    outline: none;
+  }
+
+  @media screen and(max-width: $tablets){
+    margin-right: .3rem;
+    width: 1rem;
+  }
+}
+

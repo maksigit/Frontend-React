@@ -1,0 +1,54 @@
+@import '../../app/_variables';
+
+.form-field {
+  position: relative;
+  display: flex;
+}
+
+.form-textarea {
+  padding: .35rem .05rem .15rem;
+  width: 100%;
+  border: none;
+  border-bottom : 1px solid $mercury-color;
+  box-sizing: border-box;
+  font-size: .12rem;
+  color: $tundora-color;
+  background: transparent;
+  resize: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus ~ .floating-label {
+    top: .05rem;
+    font-size: .1rem;
+    opacity: .4;
+  }
+
+  &:not(:focus):valid ~ .floating-label {
+    top: .05rem;
+    font-size: .1rem;
+    opacity: .4;
+  }
+
+  @media screen and(max-width: $mobile) {
+      font-size: 16px !important;
+      border-radius: 0;
+  }
+}
+
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: .05rem;
+  top: .21rem;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  font-size: .16rem;
+  color: $tundora-color;
+}
+

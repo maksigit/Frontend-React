@@ -1,0 +1,98 @@
+@import '../../app/_variables';
+
+.btn-arrow span {
+  position: relative;
+  z-index: 1;
+  display: block;
+  white-space: pre-wrap;
+  color: $white-color;
+  transition: .6s;
+}
+
+.btn-arrow span {
+  transform: skewX(19deg);
+}
+
+.btn-arrow {
+  position: relative;
+  display: inline-block;
+  padding: .32rem;
+  text-align: center;
+  cursor: pointer;
+  transition: .6s;
+  overflow: hidden;
+  transform: skewX(-19deg);
+  border: 1px solid $white-color;
+  background: transparent;
+  margin: 0 2px;
+  outline: none;
+
+  @media screen and(max-width: $tablets) {
+    padding: .2rem;
+  }
+
+  span {
+    svg {
+      width: .15rem;
+      height: .11rem;
+      path {
+        //fill: $gimblet-color;
+        transition: .4s;
+      }
+    }
+  }
+
+  &__skew-right {
+    transform: skewX(19deg);
+
+    span {
+      transform: skewX(-19deg);
+    }
+  }
+
+  &__disable {
+    cursor: auto;
+    span {
+      svg {
+        path {
+          fill: $scorpion-color !important;
+        }
+      }
+    }
+  }
+
+
+
+  //&:hover span svg path {
+  //  fill: $gimblet-color;
+  //}
+
+  //&:before {
+  //  content: '';
+  //  display: block;
+  //  width: 0;
+  //  height: 110%;
+  //  position: absolute;
+  //  top: 0;
+  //  right: 0;
+  //  background-color: $white-color;
+  //  transition: all .5s cubic-bezier(.42, 0, .58, 1);
+  //}
+
+  //&:hover span{
+  //  color: $tundora-color;
+  //  z-index: 1;
+  //}
+
+  //&:hover:before {
+  //  width: 110%;
+  //  right: auto;
+  //  left: 0%;
+  //}
+
+  @media screen and(max-width: $mobile) {
+    padding: 0;
+    border: none !important;
+  }
+}
+

@@ -1,0 +1,133 @@
+@import '../../app/_variables';
+
+
+.wrap-form {
+  &__field {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .form-field {
+    width: 2.3rem;
+
+    &:last-child {
+      width: 100%;
+    }
+
+    @media screen and(max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  .form-field-select {
+    width: 2.3rem;
+    border-bottom: 1px solid #E1E1E1;
+
+    .select__control {
+      border: none;
+      background: transparent;
+      box-shadow: none;
+      width: 1.8rem;
+      cursor: pointer;
+
+      .select__value-container {
+        outline: none;
+        padding: 0 .05rem;
+
+        .select__single-value {
+          font-family: 'Raleway', sans-serif;
+          font-size: .12rem;
+          color: $tundora-color;
+          letter-spacing: .5px;
+
+          &:first-letter {
+            text-transform: uppercase;
+          }
+        }
+
+        .select__input {
+          display: flex !important;
+          height: .55rem;
+          font-size: .12rem;
+
+          @media screen and(max-width: $mobile) {
+              font-size: 16px !important;
+          }
+
+        }
+      }
+
+      .select__indicators {
+        svg {
+          transition: .4s;
+        }
+      }
+
+      @media screen and(max-width: $tablets) {
+        width: unset;
+      }
+    }
+
+    .select__placeholder {
+      font-family: 'Raleway', sans-serif;
+      font-size: .12rem;
+      color: #474747;
+      letter-spacing: .5px;
+      text-transform: lowercase;
+
+      &:first-letter {
+        text-transform: uppercase;
+      }
+    }
+
+    .select__indicator {
+      svg {
+        path {
+          fill: $gimblet-color;
+        }
+      }
+    }
+
+    .select__control--menu-is-open {
+      border-bottom: none;
+
+      .select__indicators {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    @media screen and(max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  .floating-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: .12rem;
+    color: $tundora-color;
+    letter-spacing: .5px;
+  }
+
+  .select__indicator-separator {
+    display: none;
+  }
+
+  .select__menu {
+    font-size: .12rem;
+    z-index: 2;
+  }
+
+  &__wrap-btn {
+    display: flex;
+    margin-top: .5rem;
+    justify-content: flex-end;
+
+    @media screen and(max-width: $mobile) {
+      margin-top: .4rem
+    }
+  }
+}
+

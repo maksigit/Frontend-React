@@ -1,0 +1,237 @@
+@import '../../app/_variables';
+
+.slider {
+  &__item {
+    height: 100%;
+
+    @media screen and(max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.11) 0, transparent 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.11) 0, transparent 50%) rgba(13, 15, 81, 0.18);
+    }
+  }
+
+  &__item-title {
+    font-family: 'Raleway', sans-serif;
+    width: 6.3rem;
+    font-size: .5rem;
+    line-height: .6rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: $white-color;
+    font-weight: normal;
+    margin-top: .4rem;
+
+    @media screen and(max-width: $tablets){
+      width: 4.9rem;
+    }
+
+    @media screen and(max-width: $mobile){
+      font-size: .3rem;
+      line-height: .36rem;
+      width: auto;
+      letter-spacing: 2px;
+      margin-top: .2rem;
+    }
+  }
+
+  &__item-label {
+    font-family: 'Raleway Bold', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+
+  &__item-content {
+    position: absolute;
+    bottom: .7rem;
+    left: .6rem;
+
+    @media screen and(max-width: $tablets){
+      left: .3rem;
+    }
+
+    @media screen and(max-width: $mobile){
+      left: 0;
+      width: 100%;
+      bottom: auto;
+      padding: 1.2rem .2rem 0;
+    }
+  }
+
+  &__item-btn {
+    display: flex;
+    text-decoration: none;
+  }
+
+  &__item-content-btns {
+    margin-top: .6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and(max-width: $mobile){
+      justify-content: center;
+      margin-top: .4rem;
+    }
+  }
+
+  &__item-rectangle {
+    width: 3.3rem;
+    height: 1px;
+    margin-left: .3rem;
+    margin-right: .25rem;
+    background: $white-color
+  }
+
+  &__item-map-point {
+    display: flex;
+
+    .font-small {
+      font-family: 'Raleway Bold', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-right: .2rem;
+      text-decoration: none;
+    }
+  }
+
+  &__item-wrap-phone {
+    margin-top: .4rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item-phone {
+    color: $white-color;
+    line-height: .26rem;
+    letter-spacing: .5px;
+    text-decoration: none;
+
+    &:not(:first-child) {
+      margin-top: .1rem;
+    }
+  }
+
+  //&__item-title-deadline {
+  //  display: flex;
+  //  justify-content: space-between;
+  //  align-items: center;
+  //}
+
+  &__item-deadline {
+    font-family: 'Raleway', sans-serif;
+    font-size: .3rem;
+    color: $white-color;
+
+    svg {
+      display: none;
+    }
+
+    @media screen and(max-width: $mobile) {
+      font-size: .16rem;
+      letter-spacing: .5px;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      svg {
+        display: block;
+        margin-right: .15rem;
+      }
+    }
+  }
+
+  &__item-deadline-cam-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;;
+    position: absolute;
+    right: .3rem;
+    top: 1rem;
+    justify-content: space-between;
+
+    .font-small {
+      text-transform: uppercase;
+      font-family: 'Raleway Bold', sans-serif;
+    }
+
+    @media screen and(max-width: $mobile) {
+      right: .2rem;
+      height: auto;
+    }
+  }
+
+  &__item-deadline-wrap {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    right: .3rem;
+
+    .font-small {
+      margin-top: .1rem;
+      display: inline-block;
+
+      @media screen and(max-width: $mobile) {
+        display: none;
+      }
+    }
+
+    @media screen and(max-width: $mobile) {
+      top: 1.2rem
+    }
+  }
+
+  &__item-deadline-cam {
+    text-align: right;
+  }
+}
+
+// PAGE KIDS
+
+.welcome-img-kids-desktop {
+  display: block;
+
+  @media screen and(max-width: $mobile) {
+    display: none;
+  }
+}
+
+.welcome-img-kids-mobile {
+  display: none;
+
+  @media screen and(max-width: $mobile) {
+    display: block;
+  }
+}
+
+.slider__item-description-kids {
+  color: $white-color;
+  letter-spacing: .5px;
+  margin-top: .4rem;
+  width: 50%;
+
+  @media screen and(max-width: $tablets) {
+    width: 100%;
+  }
+}

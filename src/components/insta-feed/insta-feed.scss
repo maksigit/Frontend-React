@@ -1,0 +1,73 @@
+@import '../../app/_variables';
+
+
+.wrap-instagram {
+
+  .font-large {
+    text-align: center;
+  }
+
+  .font-small__upper {
+    color: $gimblet-color;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: .2rem;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  #instafeed {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: .5rem;
+    margin-left: -1.3rem;
+    margin-right: -1.3rem;
+
+    li {
+      width: 3.4rem;
+      height: 3.3rem;
+      display: flex;
+      box-sizing: border-box;
+
+      @media screen and(max-width: $tabletsWdide) {
+        width: 19.3%;
+      }
+
+      a {
+        width: 100%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @media screen and(max-width: $tablets) {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      @media screen and(max-width: $mobile) {
+        width: 1.4rem;
+        height: 1.4rem;
+      }
+    }
+
+    @media screen and(max-width: $mobile) {
+      margin-left: -.6rem;
+      margin-right: -.6rem;
+    }
+  }
+}
+
+
+
+

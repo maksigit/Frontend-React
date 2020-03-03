@@ -1,0 +1,86 @@
+@import '../../app/_variables';
+
+.btn-primary span {
+  position: relative;
+  z-index: 1;
+  display: block;
+  white-space: pre-wrap;
+  color: $white-color;
+  transition: .6s;
+  font-family: 'Raleway Bold', sans-serif;
+  font-size: .12rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  //@media screen and(max-width: $mobile){
+  //  font-size: .1rem;
+  //  padding: .19rem;
+  //}
+}
+
+.btn-primary__skew span {
+  transform: skewX(19deg);
+}
+
+.btn-primary {
+  position: relative;
+  display: inline-block;
+  background: $gimblet-color;
+  padding: .27rem .3rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: .6s;
+  overflow: hidden;
+  outline: none;
+  
+  @media screen and(max-width: $mobile) {
+    padding: .19rem .3rem;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 110%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $white-color;
+    transition: all .5s cubic-bezier(.42, 0, .58, 1);
+
+    @media screen and(max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  &:hover span {
+    color: $tundora-color;
+    z-index: 1;
+  }
+
+  &:hover:before {
+    width: 110%;
+    right: auto;
+    left: 0%;
+  }
+
+  &:hover path {
+    fill: #474747;
+  }
+
+  &__skew {
+    transform: skewX(-19deg);
+  }
+
+  &__full-with {
+    width: 100%;
+  }
+
+  &__black {
+    background: $black-color;
+  }
+}
+
+
+

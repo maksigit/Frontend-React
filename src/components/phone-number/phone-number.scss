@@ -1,0 +1,14 @@
+@import '../../app/_variables';
+
+.phone-number {
+  display: inline-block;
+  text-decoration: none;
+  font-size: .24rem;
+  color: $white-color;
+
+  @media screen and(max-width: $mobile) {
+      font-size: .16rem;
+      font-weight: 500;
+  }
+}
+

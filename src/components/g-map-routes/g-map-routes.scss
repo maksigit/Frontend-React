@@ -1,0 +1,481 @@
+@import '../../app/_variables';
+
+.search-box {
+  left: 0 !important;
+  background: $tundora-color;
+  bottom: 0;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  top: 23% !important;
+  width: 5rem;
+  transition: .4s;
+  padding: 0 .15rem;
+
+  &__item {
+    cursor: pointer;
+  }
+
+  &__wrap {
+    position: absolute;
+    left: 0 !important;
+    top: 0;
+    background: $tundora-color;
+    display: flex;
+    flex-direction: column;
+    width: 5rem;
+    transition: .4s;
+
+    .title-section {
+      @media screen and(max-width: $mobile) {
+        font-size: .2rem;
+      }
+    }
+
+    @media screen and(max-width: $tablets) {
+      width: 100%;
+    }
+  }
+
+  &__steps {
+    @media screen and(max-width: $tablets) {
+      overflow: scroll;
+    }
+  }
+
+  &__step {
+    padding: .05rem 0 .05rem .4rem;
+    border: none !important;
+    position: relative;
+    font-family: 'Raleway', sans-serif !important;
+    text-transform: unset !important;
+    color: $nobel-color;
+
+    &:before {
+      content: '';
+      width: 3px;
+      height: 3px;
+      background: $white-color;
+      position: absolute;
+      left: .2rem;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+
+      @media screen and(max-width: $mobile) {
+        left: .1rem;
+      }
+    }
+
+    @media screen and(max-width: $mobile) {
+      padding: .05rem 0 .05rem .2rem;
+    }
+  }
+
+  .font-small {
+    border-top: 1px solid #636363;
+    border-bottom: 1px solid #636363;
+    text-transform: uppercase;
+    font-family: 'Raleway Bold', sans-serif;
+  }
+
+  &__transit {
+    left: 0 !important;
+    background: $tundora-color;
+    display: flex;
+    flex-direction: column;
+    width: 5rem;
+    transition: .4s;
+    top: 14% !important;
+    padding: 0 .15rem;
+
+    .font-small {
+      border-top: 1px solid #636363;
+      border-bottom: 1px solid #636363;
+      text-transform: uppercase;
+      font-family: 'Raleway Bold', sans-serif;
+    }
+
+    @media screen and(max-width: $tablets) {
+      height: 7%;
+      width: 100%;
+      top: 17% !important;
+      padding: 0;
+    }
+
+    @media screen and(max-width: $mobile) {
+      top: 15% !important;
+    }
+  }
+
+  &__parking {
+    left: 0 !important;
+    background: $tundora-color;
+    bottom: 0;
+    height: 68%;
+    display: flex;
+    flex-direction: column;
+    top: 32% !important;
+    width: 5rem;
+    transition: .4s;
+    padding: 0 .15rem;
+
+    .font-small {
+      //border-top: 1px solid #636363;
+      border-bottom: 1px solid #636363;
+      text-transform: uppercase;
+      font-family: 'Raleway Bold', sans-serif;
+    }
+
+    .search-box__routes.font-small {
+      text-transform: unset;
+      color: $nobel-color;
+      font-family: 'Raleway', sans-serif;
+      align-items: flex-start;
+      border-bottom: 1px solid #636363;
+    }
+
+    @media screen and(max-width: $tablets) {
+      height: 17%;
+      width: 100%;
+      top: 24% !important;
+      padding: 0;
+    }
+
+    @media screen and(max-width: $mobile) {
+      top: 21% !important;
+      height: 10%;
+    }
+  }
+
+  &__title {
+    color: $white-color;
+    padding: .2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and(max-width: $tablets) {
+      padding: .2rem .3rem;
+    }
+
+    @media screen and(max-width: $mobile) {
+      padding: .1rem;
+    }
+  }
+
+  &__routes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .2rem;
+    background: $tundora-color;
+    width: 100%;
+
+    @media screen and(max-width: $tablets) {
+      justify-content: flex-start;
+    }
+
+    @media screen and(max-width: $mobile) {
+      padding: .1rem;
+      margin-top: 0;
+      flex-direction: column;
+    }
+  }
+
+  &__input {
+    width: 45%;
+
+    @media screen and(max-width: $tablets) {
+      width: unset;
+    }
+  }
+
+  &__routes-close {
+    display: none;
+  }
+
+  &__open {
+    z-index: 1 !important;
+
+    .search-box__title {
+      border-bottom: none;
+    }
+
+    .search-box__address {
+      display: block;
+    }
+
+    @media screen and(max-width: $tablets) {
+      height: 40% !important;
+    }
+  }
+
+  &_open.search-box__parking {
+    .search-box__title.font-small {
+      border-bottom: none;
+    }
+  }
+
+  &__input {
+    input {
+      width: 100%;
+      font-family: Raleway, sans-serif;
+      font-weight: normal;
+      font-size: .12rem;
+      line-height: .22rem;
+      color: $white-color;
+      border-radius: unset;
+      padding: .09rem 0 .09rem .2rem;
+      background: #545454;
+      letter-spacing: 0.5px;
+      margin-top: 0;
+      box-shadow: none;
+      height: auto;
+      outline: none;
+      border: none;
+
+      @media screen and(max-width: $tablets) {
+        width: 3rem;
+      }
+
+      @media screen and(max-width: $mobile) {
+        padding: .05rem .1rem;
+      }
+    }
+
+    input::placeholder {
+      color: $white-color;
+      font-family: Raleway, sans-serif;
+      font-weight: normal;
+      font-size: .12rem !important;
+      line-height: .22rem;
+    }
+
+  }
+
+  &__dash {
+    margin: 0 .1rem 0 .1rem;
+    color: $white-color;
+  }
+
+  &__address {
+    display: none;
+    width: 45%;
+    font-family: Raleway, sans-serif;
+    font-weight: normal;
+    font-size: .12rem !important;
+    line-height: .22rem;
+    padding: .09rem 0 .09rem .2rem !important;
+    background: #545454;
+    color: $white-color;
+    border-radius: unset;
+    letter-spacing: 0.5px;
+    margin-top: 0;
+    box-shadow: none;
+    height: auto;
+    outline: none;
+    border: none;
+
+    @media screen and(max-width: $tablets) {
+      width: 3rem !important;
+    }
+
+    @media screen and(max-width: $mobile) {
+      padding: .05rem .1rem !important;
+    }
+  }
+
+  @media screen and(max-width: $tablets) {
+    height: 17%;
+    width: 100%;
+    top: 10% !important;
+    padding: 0;
+  }
+
+  @media screen and(max-width: $mobile) {
+    top: 9% !important;
+  }
+}
+
+.single-map-routes-section .gm-style-pbt {
+  font-size: .15rem;
+  right: 10%;
+  position: absolute;
+
+  @media screen and(max-width: $mobile) {
+    top: 80%;
+  }
+}
+
+
+div.search-box__title.title-section {
+  height: 1rem;
+}
+
+div.search-box__title.title-section .wrap-city-select-get-to-us {
+  top: .28rem;
+
+  @media screen and(max-width: $mobile) {
+    top: calc(50% - .15rem);
+    height: .3rem;
+  }
+
+  .city-select-get-to-us__open {
+    height: .6rem;
+    @media screen and(max-width: $mobile) {
+      background:#474747;
+    }
+  }
+
+}
+
+div.search-box__transit {
+  position: relative !important;
+  top: unset !important;
+  margin-top: 1rem;
+}
+
+div.search-box {
+  position: relative !important;
+  top: unset !important;
+  height: auto;
+}
+
+div.search-box__parking {
+  position: relative !important;
+  top: unset !important;
+  height: inherit;
+}
+
+svg.rotate {
+  transform: rotate(180deg);
+}
+
+.search-box__title > svg {
+  height: 10px;
+  width: 10px;
+}
+
+.wrap-city-select-get-to-us .city-select-btn {
+  color: #BEA972 !important;
+}
+
+.wrap-city-select-get-to-us .city-select-btn svg {
+  width: 10px;
+  height: 10px;
+  margin-bottom: 5px;
+  color: #BEA972 !important;
+
+  @media screen and(max-width: $mobile) {
+    margin-bottom: 2px;
+  }
+
+}
+
+.wrap-city-select-get-to-us .city-select-btn svg path {
+  fill: #BEA972 !important;
+}
+
+//.search-box__step:before {
+//  width: 5px;
+//  height: 5px;
+//}
+
+.search-box__steps > div:last-child {
+  margin-bottom: 25px;
+}
+
+.search-box__open .search-box__routes {
+  opacity: 0;
+  padding: 0 .2rem;
+  animation-name: searchRouteOpen;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+
+  @keyframes searchRouteOpen {
+    form {
+      display: none;
+      opacity: 0;
+      padding: 0 .2rem;
+    }
+    to {
+      display: flex;
+      opacity: 1;
+      padding: .2rem;
+    }
+  }
+}
+
+.search-box__close .search-box__routes {
+  opacity: 1;
+  padding: .2rem;
+  //display: flex;
+  animation-name: searchRouteClose;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+
+  @keyframes searchRouteClose {
+    0% {
+      opacity: 1;
+      padding: .2rem;
+      display: flex;
+    }
+    99% {
+      opacity: 0;
+      padding: 0 .2rem;
+    }
+    100% {
+      opacity: 0;
+      padding: 0 .2rem;
+      display: none;
+    }
+  }
+
+}
+
+.search-box__routes-close div {
+  display: none;
+}
+
+@media screen and(max-width: $tablets) {
+  div.search-box__title.title-section {
+    height: 100px;
+    padding: 0 .3rem;
+  }
+  //div.search-box__title.title-section .wrap-city-select-get-to-us {
+  //  top: unset;
+  //}
+  div.search-box__transit {
+    margin-top: 100px;
+  }
+  div.search-box__parking {
+    height: auto !important;
+  }
+  .search-box__transit {
+    height: unset !important;
+  }
+  .search-box__open {
+    height: unset !important;
+  }
+}
+
+@media screen and(max-width: $mobile) {
+  div.search-box__title.title-section {
+    height: 100px;
+    padding: .2rem;
+  }
+  div.search-box__transit {
+    margin-top: 100px;
+  }
+  div.search-box__parking {
+    height: auto !important;
+  }
+  .search-box__transit {
+    height: unset !important;
+  }
+  .search-box__open {
+    height: unset !important;
+  }
+}

@@ -1,0 +1,10 @@
+@import '../../app/_variables';
+
+.tabs {
+position: relative;
+
+  &__item.font-small.active {
+    opacity: 1;
+  }
+}
+
